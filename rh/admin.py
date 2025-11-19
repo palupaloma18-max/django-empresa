@@ -17,7 +17,8 @@ class MensagemContatoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email', 'assunto', 'data_envio', 'lido')
     list_filter = ('lido', 'data_envio')
     search_fields = ('nome', 'email', 'assunto')
-@admin.register(MensagemContato)
+
+@admin.register(Produtos)
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display('imagem','produto','categoria','descricao,''valor')
+    list_display = ('imagem','produto','categoria','descricao','valor')
     search_fields = ('produto', 'categoria')

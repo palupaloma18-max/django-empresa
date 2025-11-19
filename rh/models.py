@@ -10,10 +10,10 @@ class Produtos(models.Model):
     em_estoque = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Funcionário"
-        verbose_name_plural = "Funcionários" # Define o nome plural correto
+        verbose_name = "Produto"
+        verbose_name_plural = "Produtos" # Define o nome plural correto
     def __str__(self):
-        return self.nome
+        return self.produto
 
 class Funcionarios(models.Model):
     foto = models.ImageField(null=True, blank=True)
@@ -49,3 +49,11 @@ class MensagemContato(models.Model):
         verbose_name = "Mensagem de Contato"
         verbose_name_plural = "Mensagens de Contato"
         ordering = ['-data_envio']
+
+class Cliente(models.Model):
+    nome = models.CharField(max_length=150)
+    idade = models.IntegerField(default=0, blank=True, null=True)
+    email = models.EmailField()
+    contato = models.IntegerField(default=0, blank=True, null=True)
+
+    
